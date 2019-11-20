@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
     crossorigin="anonymous"></script>
   <!--Let browser know website is optimized for mobile-->
@@ -44,14 +44,14 @@
       </div>
     </nav>
   </div>
-  <!-- Section: Slider -->
+  <!-- Section: Picture Slider -->
   <section class="slider">
     <ul class="slides">
       <li>
         <img src="img/russian_autumn.jpg">
         <!-- random image -->
         <div class="caption center-align">
-          <h2>Cravings & feelings .... What to<span class="red-text darken-4"> Eat?</span></h2>
+          <h2>Cravings & Feelings .... What to<span class="red-text darken-4"> Eat?</span></h2>
           <!-- <h5 class="light orange-text text-lighten-3 hide-on-small-only">TBD</h5> -->
         </div>
       </li>
@@ -73,50 +73,56 @@
     </ul>
   </section>
 
- <!-- Section: Search -->
- <section id="search" class="section section-search blue-grey lighten-5 white-text center scrollspy">
+ <!-- Section: Adding Ingredients field -->
+ <section id="search" class="section section-search blue-grey lighten-5 white-text center ">
     <div class="container">
       <div class="row">
         <div class="col s12 blue-text">
-          <h3>Search Destinations</h3>
+          <h3>Search Recipes</h3>
           <div class="input-field">
-            <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Aruba, Cancun, etc...">
+            <input type="text" class="white blue-text autocomplete" id="search-item" placeholder="Chicken, Rice, Cilantro, etc...">
+            <div class="button">
+                <a class="btn-floating btn-large waves-effect waves-light red" id="add_ingredients"><i class="material-icons">add</i></a><span>  Add to Ingedients List</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Icon Boxes -->
+  <!-- Section: Icon Boxes and Recipe Search Btn -->
   <section class="section section-icons grey lighten-4 center">
     <div class="container">
       <div class="row">
         <div class="col s12 m4">
           <div class="card-panel">
             <i class="material-icons large teal-text">add_shopping_cart</i>
-            <h4>Ingredients</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tempore?</p>
+            <h5 class="blue-text">Ingredients Available</h5>
+            <h6 id="list" ></h6>
+            <a class="btn waves-effect waves-light btn-small" id="find_recipe">Find Recipes</a>
           </div>
         </div>
         <div class="col s12 m4">
           <div class="card-panel">
             <i class="material-icons large teal-text">block</i>
-            <h4>Dietary Restrictions</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tempore?</p>
+            <h5 class="blue-text">Dietary Restrictions</h5>
+            <h6 id="list_dietaryRest" >TBD</h6>
+            <a class="btn waves-effect waves-light btn-small" id="find_recipe">Find Recipes</a>
           </div>
         </div>
         <div class="col s12 m4">
           <div class="card-panel">
             <i class="material-icons large teal-text">restaurant</i>
-            <h4>Servings</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tempore?</p>
+            <h5 class="blue-text">Servings</h5>
+            <h6 id="list_servings" >TBD</h6>
+            <a class="btn waves-effect waves-light btn-small" id="find_recipe">Find Recipes</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: top 10 recipes-->
+  <!-- Section: top 10 recipes & instructions -->
   <section id="popular" class="section section-popular scrollspy">
     <div class="container">
       <div class="row">
@@ -126,10 +132,21 @@
           <div class="card">
             <div class="card-image">
               <img src="img/comida.jpg" alt="">
-              <span class="card-title">Cancun, Mexico</span>
+              <!-- <span class="card-title black-text">Top 10 Recipes</span> -->
             </div>
-            <div class="card-content">
-              TBD
+            <div class="card-content" >
+              <h6 class="card-title center">Top 10 Recipes</h6>  
+              <h6 id="top10_recipe0"></h6>
+              <h6 id="top10_recipe1"></h6>
+              <h6 id="top10_recipe2"></h6>
+              <h6 id="top10_recipe3"></h6>
+              <h6 id="top10_recipe4"></h6>
+              <h6 id="top10_recipe5"></h6>
+              <h6 id="top10_recipe6"></h6>
+              <h6 id="top10_recipe7"></h6>
+              <h6 id="top10_recipe8"></h6>
+              <h6 id="top10_recipe9"></h6>
+
             </div>
           </div>
         </div>
@@ -137,10 +154,10 @@
           <div class="card">
             <div class="card-image">
               <img src="img/comida.jpg" alt="">
-              <span class="card-title">The Bahamas</span>
             </div>
             <div class="card-content">
-              TBD
+                <h6 class="card-title center">Full List of Ingredients</h6>  
+                <h6 id="">TBD</h6>
             </div>
           </div>
         </div>
@@ -148,18 +165,17 @@
           <div class="card">
             <div class="card-image">
               <img src="img/comida.jpg" alt="">
-              <span class="card-title">Nova Scotia</span>
             </div>
             <div class="card-content">
-              TBD
-            </div>
+                <h6 class="card-title center">Cooking Instructions</h6>  
+                <h6 id="">TBD</h6>            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Follow -->
+  <!-- Section: Follow - Social Media Icons -->
   <section class="section section-follow  blue-grey lighten-5 white-text center">
     <div class="container">
       <div class="row">
@@ -183,7 +199,7 @@
     </div>
   </section>
 
-  <!-- Section: Gallery -->
+  <!-- Section: Photo Gallery -->
   <section id="gallery" class="section section-gallery scrollspy">
     <div class="container">
       <h4 class="center">
@@ -191,7 +207,7 @@
       </h4>
       <div class="row">
         <div class="col s12 m3">
-          <img src="img/russian_autumn.jpg" alt="" class="materialboxed responsive-img" id="pic1">
+          <img src="img/russian_autumn.jpg" alt=" " class="materialboxed responsive-img" id="pic1">
         </div>
         <div class="col s12 m3">
           <img src="img/pump.jpg" alt="" class="materialboxed responsive-img" id="pic2">
@@ -285,43 +301,10 @@
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
-  <script>
-    // Sidenav
-    const sideNav = document.querySelector('.sidenav');
-    M.Sidenav.init(sideNav, {});
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
-    // Slider
-    const slider = document.querySelector('.slider');
-    M.Slider.init(slider, {
-      indicators: false,
-      height: 500,
-      transition: 500,
-      interval: 6000
-    });
-
-    // Autocomplete
-    const ac = document.querySelector('.autocomplete');
-    M.Autocomplete.init(ac, {
-      data: {
-        "Aruba": null,
-        "Cancun Mexico": null,
-        "Hawaii": null,
-        "Florida": null,
-        "California": null,
-        "Jamacia": null,
-        "Europe": null,
-      }
-    });
-
-    // Material Boxed
-    const mb = document.querySelectorAll('.materialboxed');
-    M.Materialbox.init(mb, {});
-
-    // ScrollSpy
-    const ss = document.querySelectorAll('.scrollspy');
-    M.ScrollSpy.init(ss, {});
-
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
